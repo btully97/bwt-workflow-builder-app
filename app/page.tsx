@@ -26,7 +26,7 @@ export default function Page() {
 
   const addNode = () => {
     if (availableQuestions.length === 0) return
-    
+
     const nextQuestion = availableQuestions[0]
     setNodes([...nodes, { id: nextId, question: nextQuestion }])
     setNextId(nextId + 1)
@@ -44,7 +44,7 @@ export default function Page() {
         <button
           onClick={addNode}
           disabled={!canAddMore}
-          className="flex items-center gap-2 bg-[#a500dd] hover:bg-[#8c00bb] text-white px-4 py-2 rounded-md transition-colors duration-200 shadow-sm disabled:bg-gray-300 disabled:cursor-not-allowed disabled:hover:bg-gray-300"
+          className="flex items-center gap-2 bg-[#a500dd] hover:bg-[#8c00bb] text-white px-4 py-2 rounded-lg transition-colors duration-200 shadow-sm disabled:bg-gray-300 disabled:cursor-not-allowed disabled:hover:bg-gray-300"
         >
           <Plus className="w-4 h-4" />
           Add Node
@@ -52,16 +52,22 @@ export default function Page() {
       </header>
 
       {/* Workflow Canvas */}
-      <main className="flex flex-col items-center py-12 px-4">
+      <main 
+        className="flex flex-col items-center py-12 px-4"
+        style={{
+          backgroundImage: 'radial-gradient(circle, #c0c0c0 1px, transparent 1px)',
+          backgroundSize: '20px 20px'
+        }}
+      >
         <div className="w-full max-w-[700px] flex flex-col items-center gap-0">
           {nodes.map((node, index) => (
             <div key={node.id} className="flex flex-col items-center w-full">
-              <WorkflowNode 
-                index={index} 
+              <WorkflowNode
+                index={index}
                 question={node.question}
                 onRemove={() => removeNode(node.id)}
               />
-              
+
               {/* Connecting line between nodes */}
               {index < nodes.length - 1 && (
                 <div className="w-0.5 h-16 bg-[#a500dd]" />

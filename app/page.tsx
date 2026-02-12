@@ -5,6 +5,7 @@ import { Plus } from "lucide-react"
 import { WorkflowNode } from "@/components/workflow-node"
 
 const EXAMPLE_QUESTIONS = [
+  "What percentage does the plan cover for co-insurance on diagnostic lab services?",
   "What is the insured's full legal name?",
   "What is the policy number?",
   "What is the date of loss?",
@@ -14,12 +15,21 @@ const EXAMPLE_QUESTIONS = [
 
 export default function Page() {
   const [nodes, setNodes] = useState([
-    { id: 1, question: "What percentage does the plan cover for co-insurance on diagnostic lab services?" },
+    { id: 1, question: EXAMPLE_QUESTIONS[0] },
   ])
+  const [nextId, setNextId] = useState(2)
+
+  // Get list of questions that haven't been used yet
+  const usedQuestions = new Set(nodes.map(node => node.question))
+  const availableQuestions = EXAMPLE_QUESTIONS.filter(q => !usedQuestions.has(q))
+  const canAddMore = availableQuestions.length > 0
 
   const addNode = () => {
-    const nextQuestion = EXAMPLE_QUESTIONS[(nodes.length - 1) % EXAMPLE_QUESTIONS.length]
-    setNodes([...nodes, { id: nodes.length + 1, question: nextQuestion }])
+    if (availableQuestions.length === 0) return
+    
+    const nextQuestion = availableQuestions[0]
+    setNodes([...nodes, { id: nextId, question: nextQuestion }])
+    setNextId(nextId + 1)
   }
 
   const removeNode = (id: number) => {
@@ -33,7 +43,8 @@ export default function Page() {
         <h1 className="text-lg font-semibold">Workflow Builder</h1>
         <button
           onClick={addNode}
-          className="flex items-center gap-2 bg-[#a500dd] hover:bg-[#8c00bb] text-white px-4 py-2 rounded-md transition-colors duration-200 shadow-sm"
+          disabled={!canAddMore}
+          className="flex items-center gap-2 bg-[#a500dd] hover:bg-[#8c00bb] text-white px-4 py-2 rounded-md transition-colors duration-200 shadow-sm disabled:bg-gray-300 disabled:cursor-not-allowed disabled:hover:bg-gray-300"
         >
           <Plus className="w-4 h-4" />
           Add Node

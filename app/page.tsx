@@ -70,10 +70,10 @@ export default function Page() {
 
               {/* Connecting line between nodes */}
               {index < nodes.length - 1 && (
-                <div className="flex flex-col items-center">
-                  <div className="w-0.5 h-16 bg-[#a500dd]" />
+                <div className="flex flex-col items-center -mt-1">
+                  <div className="w-[2px] h-20 bg-[#a500dd]" />
                   <div 
-                    className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[8px] border-l-transparent border-r-transparent border-t-[#a500dd]"
+                    className="w-0 h-0 border-l-[7px] border-r-[7px] border-t-[10px] border-l-transparent border-r-transparent border-t-[#a500dd] -mt-[1px]"
                   />
                 </div>
               )}

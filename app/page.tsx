@@ -37,7 +37,7 @@ export default function Page() {
   }
 
   return (
-    <div className="min-h-screen bg-[#e5e5e5]">
+    <div className="min-h-screen bg-[#f5f5f5]">
       {/* Header */}
       <header className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
         <h1 className="text-lg font-semibold">Workflow Builder</h1>
@@ -52,11 +52,11 @@ export default function Page() {
       </header>
 
       {/* Workflow Canvas */}
-      <main 
-        className="flex flex-col items-center py-12 px-4"
+      <main
+        className="flex flex-col min-h-[calc(100vh-73px)] items-center py-12 px-4"
         style={{
           backgroundImage: 'radial-gradient(circle, #c0c0c0 1px, transparent 1px)',
-          backgroundSize: '20px 20px'
+          backgroundSize: '20px 20px',
         }}
       >
         <div className="w-full max-w-[700px] flex flex-col items-center gap-0">

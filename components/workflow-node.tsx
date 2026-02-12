@@ -10,7 +10,7 @@ export function WorkflowNode({ index, question, onRemove }: WorkflowNodeProps) {
   return (
     <div className="relative w-full max-w-[295px]">
       {/* Top connection point */}
-      <div className="w-[12px] h-[12px] rounded-full bg-white border-[2px] border-[#a500dd] shadow-sm absolute top-[-8px] left-1/2 -translate-x-1/2 z-10" />
+      <div className="w-[12px] h-[12px] rounded-full bg-white border-[2px] border-[#a500dd] shadow-sm absolute top-[-6px] left-1/2 -translate-x-1/2 z-10" />
 
 
       {/* Node card */}
@@ -44,7 +44,7 @@ export function WorkflowNode({ index, question, onRemove }: WorkflowNodeProps) {
       </div>
 
       {/* Bottom connection point */}
-      <div className="w-[12px] h-[12px] rounded-full bg-white border-[2px] border-[#a500dd] shadow-sm absolute bottom-[-8px] left-1/2 -translate-x-1/2 z-10" />
+      <div className="w-[12px] h-[12px] rounded-full bg-white border-[2px] border-[#a500dd] shadow-sm absolute bottom-[-6px] left-1/2 -translate-x-1/2 z-10" />
     </div>
   )
 }

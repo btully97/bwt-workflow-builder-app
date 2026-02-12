@@ -1,4 +1,4 @@
-import { MessageCircle, X } from "lucide-react"
+import { MessageCircle, X, MoveDown } from "lucide-react"
 
 interface WorkflowNodeProps {
   index: number
@@ -10,10 +10,9 @@ export function WorkflowNode({ index, question, onRemove }: WorkflowNodeProps) {
   return (
     <div className="relative w-full max-w-[400px]">
       {/* Top connection point */}
-      <div className="flex justify-center mb-[-1px]">
-        <div className="w-3 h-3 rounded-full bg-[#a500dd] border-2 border-white shadow-sm" />
-      </div>
-      
+      <div className="w-3 h-3 rounded-full bg-white border-2 border-[#a500dd] shadow-sm absolute top-[-6px] left-1/2 -translate-x-1/2 z-10" />
+
+
       {/* Node card */}
       <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100 relative group">
         <div className="flex items-start gap-3">
@@ -25,7 +24,7 @@ export function WorkflowNode({ index, question, onRemove }: WorkflowNodeProps) {
             <p className="text-sm text-gray-700 leading-relaxed">{question}</p>
           </div>
         </div>
-        
+
         {/* Remove button */}
         {onRemove && (
           <button
@@ -37,11 +36,9 @@ export function WorkflowNode({ index, question, onRemove }: WorkflowNodeProps) {
           </button>
         )}
       </div>
-      
+
       {/* Bottom connection point */}
-      <div className="flex justify-center mt-[-1px]">
-        <div className="w-3 h-3 rounded-full bg-[#a500dd] border-2 border-white shadow-sm" />
-      </div>
+      <div className="w-3 h-3 rounded-full bg-white border-2 border-[#a500dd] shadow-sm absolute bottom-[-5px] left-1/2 -translate-x-1/2 z-10" />
     </div>
   )
 }

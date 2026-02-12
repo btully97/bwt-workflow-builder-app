@@ -73,7 +73,7 @@ export default function Page() {
                 <div className="flex flex-col items-center -mt-1">
                   <div className="w-[2px] h-20 bg-[#a500dd]" />
                   <div
-                    className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[10px] border-l-transparent border-r-transparent border-t-[#a500dd] -mt-[1px] -translate-y-1 "
+                    className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[10px] border-l-transparent border-r-transparent border-t-[#a500dd] -mt-[1px] -translate-y-[1px] "
                   />
                 </div>
               )}

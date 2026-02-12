@@ -22,6 +22,10 @@ export default function Page() {
     setNodes([...nodes, { id: nodes.length + 1, question: nextQuestion }])
   }
 
+  const removeNode = (id: number) => {
+    setNodes(nodes.filter(node => node.id !== id))
+  }
+
   return (
     <div className="min-h-screen bg-[#e5e5e5]">
       {/* Header */}
@@ -41,7 +45,11 @@ export default function Page() {
         <div className="w-full max-w-[700px] flex flex-col items-center gap-0">
           {nodes.map((node, index) => (
             <div key={node.id} className="flex flex-col items-center w-full">
-              <WorkflowNode index={index} question={node.question} />
+              <WorkflowNode 
+                index={index} 
+                question={node.question}
+                onRemove={() => removeNode(node.id)}
+              />
               
               {/* Connecting line between nodes */}
               {index < nodes.length - 1 && (

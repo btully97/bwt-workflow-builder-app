@@ -72,8 +72,8 @@ export default function Page() {
               {index < nodes.length - 1 && (
                 <div className="flex flex-col items-center">
                   <div className="w-0.5 h-16 bg-[#a500dd]" />
-                  <div 
-                    className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[8px] border-l-transparent border-r-transparent border-t-[#a500dd]"
+                  <div
+                    className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[8px] border-l-transparent border-r-transparent border-t-[#a500dd] -mt-1"
                   />
                 </div>
               )}

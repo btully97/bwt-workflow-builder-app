@@ -1,4 +1,4 @@
-import { MessageCircle, X, MoveDown } from "lucide-react"
+import { MessageCircleQuestionMark, X, MoveDown } from "lucide-react"
 
 interface WorkflowNodeProps {
   index: number
@@ -17,7 +17,7 @@ export function WorkflowNode({ index, question, onRemove }: WorkflowNodeProps) {
       <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100 relative group">
         <div className="flex items-start gap-3">
           <div className="flex-shrink-0 mt-1">
-            <MessageCircle className="w-5 h-5" />
+            <MessageCircleQuestionMark className="w-5 h-5" />
           </div>
           <div className="flex-1">
             <h3 className="font-semibold text-base mb-2">Question</h3>

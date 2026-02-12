@@ -8,7 +8,7 @@ interface WorkflowNodeProps {
 
 export function WorkflowNode({ index, question, onRemove }: WorkflowNodeProps) {
   return (
-    <div className="relative w-full max-w-[400px]">
+    <div className="relative w-full max-w-[295px]">
       {/* Top connection point */}
       <div className="w-4 h-4 rounded-full bg-white border-[3px] border-[#a500dd] shadow-sm absolute top-[-8px] left-1/2 -translate-x-1/2 z-10" />
 
@@ -16,19 +16,19 @@ export function WorkflowNode({ index, question, onRemove }: WorkflowNodeProps) {
       {/* Node card */}
       <div className="bg-white rounded-2xl shadow-md border border-gray-200 relative group overflow-hidden">
         {/* Header Section */}
-        <div className="flex items-center gap-3 px-6 py-5">
+        <div className="flex items-center gap-3 p-4">
           <div className="flex-shrink-0">
             <MessageCircle className="w-6 h-6" strokeWidth={2.5} />
           </div>
-          <h3 className="font-semibold text-2xl">Question</h3>
+          <h3 className="font-semibold text-md">Question</h3>
         </div>
 
         {/* Divider */}
         <div className="border-t border-gray-200" />
 
         {/* Content Section */}
-        <div className="px-6 py-6">
-          <p className="text-lg text-gray-900 leading-relaxed">{question}</p>
+        <div className="p-4">
+          <p className="text-sm text-gray-900 leading-relaxed">{question}</p>
         </div>
 
         {/* Remove button */}
